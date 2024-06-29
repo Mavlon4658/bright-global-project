@@ -13,7 +13,9 @@ export default {
 
 
 <template>
-  <Header />
-  <router-view/>
-  <Footer />
+  <div class="wrapper">
+    <Header />
+    <router-view/>
+    <Footer />
+  </div>
 </template>
