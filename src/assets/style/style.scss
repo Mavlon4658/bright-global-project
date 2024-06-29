@@ -1,0 +1,448 @@
+@mixin media($value) {
+    @if ($value < 0) {
+        @media screen and (min-width: calc($value * (-1)) + 'px') {
+            @content;
+        }
+
+    } @else {
+        @media screen and (max-width: $value + 'px') {
+            @content;
+        }
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+span, label {
+    display: inline-block;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+input, textarea {
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    outline: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+    min-height: 100svh;
+}
+
+ul, ol, dl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 400;
+}
+
+.main-container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.btn {
+    &_blue {
+        height: 84px;
+        border-radius: 7px;
+        background: linear-gradient(45.00deg, rgb(1, 82, 255) 1.697%,rgb(7, 66, 190) 88.371%,rgb(1, 82, 255) 93.789%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 66.5px;
+        cursor: pointer;
+        user-select: none;
+        transition: 0.3s ease all;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+
+        &:hover {
+            border: 1px solid rgb(0, 8, 24);
+            border-radius: 7px;
+            background: linear-gradient(45.00deg, rgb(1, 82, 255) 1.697%,rgb(7, 66, 190) 88.371%,rgb(1, 82, 255) 93.789%);
+        }
+
+        &:active {
+            border: 2px solid rgb(0, 8, 24);
+            border-radius: 7px;
+            background: linear-gradient(45.00deg, rgb(1, 82, 255) 1.697%,rgb(7, 66, 190) 88.371%,rgb(1, 82, 255) 93.789%);
+        }
+    }
+}
+
+// Header
+.header {
+    padding: 14px 0 10px;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 29px;
+        
+        &_link {
+            font-size: 18px;
+        }
+
+        button {
+            width: 51px;
+            height: 51px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(1, 81, 255, 0.1);
+            font-size: 18px;
+            font-weight: bold;
+            color: #0152FF;
+        }
+    }
+}
+// Header end
+
+// Home
+.home {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    background: linear-gradient(to bottom, #7E9EC6, #3D4D60);
+    border-radius: 35px;
+    color: #fff;
+    margin-bottom: 159px;
+    
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 45px;
+        padding: 46px 0 230px;
+        position: relative;
+    }
+
+    &__left {
+        padding-top: 85px;
+    }
+
+    &__title {
+        font-size: 73px;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    &__description {
+        font-size: 20px;
+        color: #F2F2F2;
+        margin-bottom: 32px;
+    }
+
+    &__right {
+        position: relative;
+        flex-shrink: 0;
+
+        img {
+            &:nth-child(1) {
+                width: 663px;
+            }
+
+            &:nth-child(2) {
+                position: absolute;
+                bottom: -10px;
+                right: -33px;
+            }
+        }
+    }
+
+    &__card {
+        position: absolute;
+        bottom: -55px;
+        left: 0;
+        width: 100%;
+        color: #000;
+        display: flex;
+        align-items: stretch;
+        gap: 30px;
+
+        &_item {
+            position: relative;
+            z-index: 1;
+            width: calc(100% / 3 - 20px);
+
+            &__bg {
+                position: absolute;
+                left: -14px;
+                top: -8px;
+                min-width: calc(100% + 28px);
+                display: block;
+                min-height: 100%;
+                z-index: -1;
+                object-fit: fill;
+            }
+
+            .card_head {
+                display: flex;
+                margin-bottom: 18px;
+                gap: 42px;
+                padding-left: 15px;
+
+                h3 {
+                    font-size: 37px;
+                    font-weight: bold;
+                    color: #20C4F4;
+                }
+
+                h4 {
+                    padding-top: 11px;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                padding: 0 20px 10px 25px;
+            }
+        }
+    }
+}
+// Home end
+
+// Business
+.business {
+    margin-bottom: 104px;
+
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        margin-bottom: 30px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: calc(50% - 15px);
+        }
+    }
+
+    &__content {
+        width: calc(50% - 15px);
+        padding-top: 16px;
+    }
+
+    &__title {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 23px;
+    }
+
+    &__description {
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 13px;
+        border: 1px solid #EFF4FF;
+        padding: 26px 18px 22px 25px;
+        background: #F5FAFB;
+
+        &_head {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            img {
+                flex-shrink: 0;
+            }
+
+            h3 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        li {
+            width: calc(50% - 15px);
+        }
+    }
+}
+// Business end
+
+// Footer
+.footer {
+    background: #343434;
+    padding: 13px 0px 20px;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 23px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 13px;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: flex-start;
+        gap: 112px;
+
+        &_item {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+
+            a {
+                color: #fff;
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            color: #B1B1B1;
+            font-size: 14px;
+        }
+    }
+}
+// Footer end
+
+// About
+.about {
+    margin-bottom: 104px;
+
+    &__title {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin-bottom: 34px;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .option {
+        background: #EEF0F3;
+        border-radius: 13px;
+
+        &_head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 13px;
+            background: #D2DAE5;
+            padding: 17px 14px 20px;
+        }
+
+        &_body {
+            padding: 0 19px 0 14px;
+            
+            &__item {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 35px;
+                padding: 22px 0;
+                
+                &:not(:last-child) {
+                    border-bottom: 1px solid #D6D8DB;
+                }
+
+                p {
+                    width: 100%;
+                    font-size: 20px;
+                }
+
+                h4 {
+                    width: 348px;
+                    flex-shrink: 0;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+// About end

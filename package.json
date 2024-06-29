@@ -12,7 +12,10 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "node-sass": "^9.0.0",
+    "sass": "1.69",
+    "sass-loader": "^10.5.2"
   },
   "browserslist": [
     "> 1%",
